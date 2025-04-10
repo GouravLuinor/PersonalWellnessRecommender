@@ -6,11 +6,23 @@ This Python script implements an end-to-end system for generating synthetic well
 
 
 ##1. Data Generation
-Synthetic Dataset Creation:
 
-Generates 10,000 synthetic samples with realistic health metrics (age, BMI, sleep, activity, etc.) and correlations (e.g., higher BMI linked to lower activity).
+Synthetic Dataset Creation & Realistic Relationships:
+The dataset simulates 10,000 individuals with features like age, BMI, activity level, sleep, stress, and biometrics. It embeds real-world health patterns:
 
-Input Features: 20+ attributes including demographics, lifestyle, and biometrics.
+BMI & Activity: Higher BMI correlates with sedentary lifestyles and lower daily steps.
+
+Stress & Mood: High stress increases likelihood of "Sad" mood (40%) and poor sleep quality.
+
+Hydration: Water intake <2000ml leads to 60% chance of "Low Hydration."
+
+Age/BMI Effects: Older age or high BMI elevates resting heart rate and blood pressure.
+
+Diet Impact: Keto diets correlate with higher cholesterol; vegan diets with normal levels.
+
+Sleep & Energy: Short sleep (<6hrs) often results in "Very Low" energy.
+
+Wellness Score combines 10+ factors (BMI, sleep, stress, steps, etc.) to classify users as "Poor" to "Excellent." These relationships ensure ML models learn realistic patterns (e.g., suggesting more steps for sedentary users) while maintaining privacy.
 
 Output Targets:
 
@@ -88,18 +100,18 @@ Uses Pipeline and ColumnTransformer for clean preprocessing integration.
 ##5. Example Output
 
 === Wellness Recommendations ===
-                             Recommendation
-Recommended Calories                  2500
-Protein (g)                            145
-Carbs (g)                              220
-Fats (g)                                65
-New Sleep Duration (hrs)               7.5
-Recommended Workout Duration (hrs)     1.2
-Target Daily Steps                    10000
-Suggested Workout              Cardio + Strength
-Meal Timing Advice         Regular Intervals
-Recommended Meal Frequency      3 Meals a Day
-Overall Wellness Score               Good
+                            
+Recommended Calories                 
+Protein (g)                     
+Carbs (g)                           
+Fats (g)                              
+New Sleep Duration (hrs)             
+Recommended Workout Duration (hrs)
+Target Daily Steps                    
+Suggested Workout           
+Meal Timing Advice        
+Recommended Meal Frequency     
+Overall Wellness Score              
 
 6. Potential Improvements
 
