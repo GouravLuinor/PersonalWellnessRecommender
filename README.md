@@ -3,6 +3,8 @@
 Detailed Summary of the Personal Wellness Prediction System
 This Python script implements an end-to-end system for generating synthetic wellness data, training machine learning models, and providing personalized health recommendations through a user interface. Here's a detailed breakdown:
 
+
+
 ##1. Data Generation
 Synthetic Dataset Creation:
 
@@ -19,6 +21,8 @@ Classification: Suggested workouts, meal timing, supplements, wellness score.
 Realistic relationships (e.g., stress affects mood, activity influences steps).
 
 Saved to personal_wellness_dataset_large.csv.
+
+
 
 ##2. Machine Learning Pipeline
 Data Preprocessing:
@@ -39,6 +43,9 @@ Regression: RMSE and MAE (e.g., RMSE of 287.9 for calories).
 
 Classification: Accuracy and F1-scores (e.g., 85% accuracy for wellness score).
 
+
+
+
 ##3. User Interaction & Visualization
 Input Methods:
 
@@ -57,6 +64,9 @@ Helps users contextualize their inputs (e.g., "How does my BMI compare to others
 Predictions:
 
 Displays personalized recommendations (e.g., "Recommended Calories: 2500", "Wellness Score: Good").
+
+
+
 
 ##4. Technical Highlights
 Handling Real-World Scenarios:
