@@ -8,7 +8,22 @@ This Python script implements an end-to-end system for generating synthetic well
 #####       1. Data Generation      ######
 Synthetic Dataset Creation:
 
-Generates 10,000 synthetic samples with realistic health metrics (age, BMI, sleep, activity, etc.) and correlations (e.g., higher BMI linked to lower activity).
+Synthetic Dataset Creation & Realistic Relationships
+The dataset simulates 10,000 individuals with features like age, BMI, activity level, sleep, stress, and biometrics. It embeds real-world health patterns:
+
+BMI & Activity: Higher BMI correlates with sedentary lifestyles and lower daily steps.
+
+Stress & Mood: High stress increases likelihood of "Sad" mood (40%) and poor sleep quality.
+
+Hydration: Water intake <2000ml leads to 60% chance of "Low Hydration."
+
+Age/BMI Effects: Older age or high BMI elevates resting heart rate and blood pressure.
+
+Diet Impact: Keto diets correlate with higher cholesterol; vegan diets with normal levels.
+
+Sleep & Energy: Short sleep (<6hrs) often results in "Very Low" energy.
+
+Wellness Score combines 10+ factors (BMI, sleep, stress, steps, etc.) to classify users as "Poor" to "Excellent." These relationships ensure ML models learn realistic patterns (e.g., suggesting more steps for sedentary users) while maintaining privacy.
 
 Input Features: 20+ attributes including demographics, lifestyle, and biometrics.
 
