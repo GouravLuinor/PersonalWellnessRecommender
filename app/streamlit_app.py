@@ -14,15 +14,23 @@ from sklearn.multioutput import MultiOutputRegressor
 import matplotlib.pyplot as plt
 import seaborn as sns
 import warnings
+from pathlib import Path
 
 # Suppress warnings
 warnings.filterwarnings('ignore', category=UserWarning, module='sklearn')
 #st.set_option('deprecation.showPyplotGlobalUse', False)
 
 # === PART 1: Data Generation ===
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+GENERATED_DATA_DIR = PROJECT_ROOT / "data" / "generated"
+DATASET_PATH = GENERATED_DATA_DIR / "personal_wellness_dataset_large.csv"
+
+
 @st.cache_data
-def generate_data(num_samples=10000, filename='personal_wellness_dataset_large.csv'):
-    """Generates synthetic wellness data with realistic correlations."""
+def generate_data(num_samples=10000, filename=DATASET_PATH):
+    """Generate synthetic wellness data with modeled correlations."""
+    filename = Path(filename)
+    filename.parent.mkdir(parents=True, exist_ok=True)
     if os.path.exists(filename):
         df = pd.read_csv(filename)
         return df
