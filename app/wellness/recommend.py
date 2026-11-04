@@ -12,6 +12,26 @@ from .data import round_targets
 
 FALL_ASLEEP_MIN = 15
 
+DESCRIPTIONS = {
+    # Workout plans
+    "Strength Training": "3-4 full-body resistance sessions a week, adding weight or reps gradually. Rest each muscle group 48 h.",
+    "Cardio + Strength": "Mix 2-3 strength sessions with 2-3 moderate cardio sessions (brisk walk, cycling, swimming) each week.",
+    "Low-Impact Cardio": "Joint-friendly movement such as walking, cycling, swimming or an elliptical. Build duration before intensity.",
+    "Yoga & Mobility": "Gentle yoga, stretching and light movement to lower stress, plus 1-2 light strength sessions.",
+    "HIIT + Recovery": "1-2 short high-intensity interval sessions a week, balanced with easy cardio and full rest days.",
+    # Meal patterns
+    "3 Balanced Meals": "Three meals at consistent times, each with protein, vegetables and a whole-food carb or fat.",
+    "5-6 Smaller Meals": "Eat every 3-4 hours to make a calorie surplus easier. Include protein at each meal.",
+    "Time-Restricted Eating": "Eat within a consistent 10-hour window (for example 08:00-18:00) to support appetite control.",
+    "Regular Meals, Early Dinner": "Regular mealtimes and dinner at least 3 hours before bed to support sleep and steadier energy.",
+    # Mindfulness practices
+    "Box Breathing": "Inhale 4 s, hold 4 s, exhale 4 s, hold 4 s. 5 minutes, twice a day, calms the stress response.",
+    "Body-Scan Meditation": "10 minutes lying down, moving attention slowly from head to toe. A good wind-down before sleep.",
+    "Nature Walk": "20-30 minutes outdoors, ideally in daylight and green space. Lifts mood and energy.",
+    "Focused-Attention Meditation": "10 minutes focusing on the breath and gently returning when the mind wanders. Trains concentration.",
+    "Gratitude Journaling": "Write down three specific good things each evening. A simple habit linked to better wellbeing.",
+}
+
 
 def minutes_to_hhmm(minutes: float) -> str:
     minutes = int(round(minutes)) % (24 * 60)
@@ -148,7 +168,7 @@ def plan_to_markdown(plan: Plan) -> str:
         "# My Wellness Plan",
         f"_Generated {date.today():%d %B %Y}_",
         "",
-        f"**Wellness score:** {t['Wellness Score']:.0f}/100 ({plan.category})",
+        f"**Wellness score:** {t['Wellness Score']:.0f}/100 ({plan.category})  ",
         f"**Goal:** {p['Objective']} over {p['Timeline'].lower()}",
         "",
         "## Nutrition",
@@ -163,7 +183,7 @@ def plan_to_markdown(plan: Plan) -> str:
         f"- Steps: {t['Steps Target']:,.0f}/day",
         "",
         "## Sleep & mind",
-        f"- Sleep: {t['Sleep Target (hrs)']:.2g} h/night: in bed by {plan.bedtime} to wake at "
+        f"- Sleep: {t['Sleep Target (hrs)']:g} h a night, in bed by {plan.bedtime} to wake at "
         f"{minutes_to_hhmm(p['Wake Up Time (min)'])}",
         f"- Mindfulness: {t['Mindfulness Practice']}",
     ]

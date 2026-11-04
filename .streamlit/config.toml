@@ -1,0 +1,24 @@
+[server]
+headless = true
+
+[browser]
+gatherUsageStats = false
+
+[theme]
+baseRadius = "0.6rem"
+showWidgetBorder = true
+chartCategoricalColors = ["#3f9a6b", "#d69e2e", "#5b8fc7", "#c2607f", "#8a7fc7"]
+
+[theme.light]
+primaryColor = "#2f7a55"
+backgroundColor = "#fbfaf7"
+secondaryBackgroundColor = "#f0eee7"
+textColor = "#1f2a24"
+borderColor = "#dedad0"
+
+[theme.dark]
+primaryColor = "#6fc196"
+backgroundColor = "#121614"
+secondaryBackgroundColor = "#1b211e"
+textColor = "#e4ebe6"
+borderColor = "#2c3530"

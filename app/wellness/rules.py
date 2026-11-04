@@ -10,7 +10,7 @@ All functions are vectorised over a pandas DataFrame containing the columns in
 Sources for the constants (simplified for an educational project):
   * Mifflin-St Jeor equation for basal metabolic rate.
   * Standard activity multipliers (1.2 - 1.725).
-  * Protein 1.0 - 2.2 g/kg depending on goal and training.
+  * Protein 1.2 - 2.2 g/kg depending on goal and training.
   * WHO: 150-300 min/week moderate activity; adults sleep 7-9 h.
   * ~33 ml water per kg body weight plus exercise losses.
 """
@@ -51,8 +51,8 @@ def nutrition_targets(df: pd.DataFrame) -> pd.DataFrame:
     ref_weight = np.minimum(df["Weight (kg)"], 25 * (df["Height (cm)"] / 100) ** 2 * 1.2)
     trains_hard = (df["Exercise (min/day)"] >= 30) & df["Workout Type"].isin(["Strength", "HIIT", "Mixed"])
     g_per_kg = (
-        1.0
-        + 0.4 * trains_hard
+        1.2
+        + 0.3 * trains_hard
         + 0.4 * (df["Objective"] == "Weight Loss")
         + 0.3 * (df["Objective"] == "Weight Gain")
         + 0.3 * (df["Diet Type"] == "High Protein")
