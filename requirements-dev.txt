@@ -1,0 +1,9 @@
+-r requirements.txt
+
+# Testing and linting
+pytest~=9.2
+ruff~=0.17
+
+# Exploratory notebook (notebooks/)
+matplotlib~=3.11
+seaborn~=0.13

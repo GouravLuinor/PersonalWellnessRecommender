@@ -79,4 +79,4 @@ MINDFULNESS_PRACTICES = [
 ]
 
 # Bump when the generator or rules change so cached data/models are rebuilt.
-DATA_VERSION = 2
+DATA_VERSION = 3

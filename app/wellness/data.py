@@ -155,7 +155,8 @@ def load_or_create_dataset(path: Path = DATASET_PATH, n: int = 10_000, seed: int
     path = Path(path)
     if path.exists():
         try:
-            df = pd.read_csv(path)
+            # keep_default_na=False: the literal workout type "None" must not become NaN.
+            df = pd.read_csv(path, keep_default_na=False, na_values=[""])
             if set(schema.FEATURES + schema.TARGETS) <= set(df.columns) and len(df) == n:
                 return df
         except (pd.errors.ParserError, pd.errors.EmptyDataError, OSError):

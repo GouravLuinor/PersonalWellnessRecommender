@@ -2,7 +2,7 @@
 name = "personal-wellness-recommender"
 version = "2.0.0"
 description = "ML-powered personal wellness recommendations with a Streamlit UI (educational, synthetic data)."
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 
 [tool.pytest.ini_options]
 pythonpath = ["app"]
@@ -11,9 +11,12 @@ filterwarnings = ["ignore::DeprecationWarning"]
 
 [tool.ruff]
 line-length = 120
-target-version = "py310"
+target-version = "py311"
 extend-exclude = ["notebooks"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "B", "UP"]
 ignore = ["E501"]  # long user-facing strings are clearer unwrapped
+
+[tool.ruff.lint.isort]
+known-first-party = ["wellness"]
