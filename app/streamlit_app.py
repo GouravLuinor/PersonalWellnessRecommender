@@ -181,8 +181,9 @@ def nutrition_tab(plan: recommend.Plan) -> None:
                 color=alt.Color("Macro:N", legend=alt.Legend(orient="bottom", title=None)),
                 tooltip=["Macro", alt.Tooltip("kcal:Q", format=",.0f"), alt.Tooltip("Share:Q", format=".0%")],
             )
-            .properties(height=300, title="Where your calories come from")
+            .properties(height=280)
         )
+        st.markdown('<div class="eyebrow">Where your calories come from</div>', unsafe_allow_html=True)
         st.altair_chart(chart, width="stretch")
     with right:
         st.markdown(f"#### {t['Meal Pattern']}")
