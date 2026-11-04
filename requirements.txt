@@ -1,7 +1,7 @@
 # Runtime dependencies for the Streamlit app (Python 3.11+).
 streamlit~=1.59
 pandas~=3.0
-numpy~=2.5
+numpy>=2.4,<3  # 2.5+ requires Python 3.12
 scikit-learn~=1.9
 altair~=6.2
 joblib~=1.5
